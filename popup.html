@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html><head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1><span class="you">You</span><span class="tube">Tube</span> → Telegram</h1>
+  <hr>
+  <h2 class="center">Send the video you watching with the current timestamp to any Telegram chat that you want. </h2>
+  <hr>
+  <p class="center">Enter your <strong>bot token</strong> and <strong>chat ID</strong> before pressing send. Your bot must be an admin on that channel</p>
+  <form>
+    <input type="text" name="botId" id="botId" placeholder="Enter bot token" required="">
+    <input type="text" name="chatId" id="chatId" placeholder="Enter chat ID" required="">
+    <button id="sendVideo">Send</button>
+    <hr>
+    <span id="outputMessage"></span>
+  </form>
+  
+  <script src="popup.js"></script>
+
+</body></html>

@@ -1,0 +1,110 @@
+body{
+    width: 250px;
+    background: rgb(0 0 0 / 84%);
+    display: flex;
+    color: white;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+}
+button {
+    background: #0088cc;
+    height: 30px;
+    width: 100px;
+    outline: none;
+    margin: 10px;
+    border: none;
+    border-radius: 50px;
+    color: #FFFF;
+    transition: all 200ms ease-in;
+}
+button:hover{
+    cursor: pointer;
+    transform: scale(1.1,1.1);
+    box-shadow: 1px 2px 4px black;
+}
+  
+button.current {
+  box-shadow: 0 0 0 2px white,
+               0 0 0 4px black;
+}
+/* span {
+    padding: 0.5em;
+    border-radius: 20px;
+} */
+#outputMessage{
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+    font-size: 1.1em;
+    border-radius: 20px;
+}
+.error{
+    background: red;
+}
+.success{
+    background: green;
+    
+}
+h1{
+    font-size: 1.8em;
+}
+form{
+    display: contents;
+}
+hr{
+    width: 100%;margin-bottom: 2em;
+}
+input{
+    text-align: center;
+    border-radius: 30px;
+    height: 20px;
+    padding: 5px;
+    margin: 1em;
+    padding-right: 10px;
+    width: 100%;
+    padding-left: 10px;
+    box-shadow: 2px 2px 3px 0px black;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #0088cc;
+}
+input:hover{
+    opacity: 0.8;
+}
+input:focus{
+    opacity: 1;
+}
+input:focus, input:hover{
+    outline-color: #0088cc;
+    background: #0088cc;
+    color: white;
+    border-width: 1px;
+}
+.error-input{
+    border: 2px solid red;
+}
+.success-input{
+    border: 2px solid green;
+}
+.center{
+    text-align: center;
+    text-shadow: 2px 2px #000000;
+}
+strong{
+    color: #0088cc;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.hidden{
+    display: none;
+}
+.tube{
+    background: red;
+    padding: 8px;
+    border-radius: 15px;
+    margin-left: 5px;
+}
+.you{
+    color: black;
+}
