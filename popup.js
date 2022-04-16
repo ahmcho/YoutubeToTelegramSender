@@ -21,33 +21,37 @@ function sendToTelegram(el){
 }
 sendVideo.addEventListener("click", async (e) => {
     e.preventDefault();
-    //document.querySelector('.hidden').classList.remove('hidden');
     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     let messageSpan = document.querySelector('#outputMessage');
-    if(chatId.value !== '' || botId.value !== '') {
-        localStorage.setItem('BOT_TOKEN', botId.value);
-        localStorage.setItem('CHAT_ID', chatId.value);
-        chrome.scripting.executeScript({
-          target: {tabId: tab.id},
-          function: setPageBackgroundColor,
-          args: [[chatId.value, botId.value]]
-        }, () => {
-            chrome.storage.sync.get('isVideoPlayerPage', ({isVideoPlayerPage}) => {
-                if(!isVideoPlayerPage){
-                    messageSpan.textContent = `Please, navigate to any video`;
-                    messageSpan.setAttribute('class', 'error');
-                } else {
-                    sendToTelegram(messageSpan);
-                }
+    if(tab.url.includes('youtube') !== false){
+        if(chatId.value !== '' || botId.value !== '') {
+            localStorage.setItem('BOT_TOKEN', botId.value);
+            localStorage.setItem('CHAT_ID', chatId.value);
+            chrome.scripting.executeScript({
+              target: {tabId: tab.id},
+              function: setPageBackgroundColor,
+              args: [[chatId.value, botId.value]]
+            }, () => {
+                chrome.storage.sync.get('isVideoPlayerPage', ({isVideoPlayerPage}) => {
+                    if(!isVideoPlayerPage){
+                        messageSpan.textContent = `Please, navigate to any video`;
+                        messageSpan.setAttribute('class', 'error');
+                    } else {
+                        sendToTelegram(messageSpan);
+                    }
+                });
             });
-        });
+        } else {
+            document.querySelector('form').checkValidity();
+            document.querySelector('form').reportValidity();
+            chatId.setAttribute('class','error-input');
+            botId.setAttribute('class','error-input');
+            messageSpan.textContent = "Please, enter all required fields";   
+            messageSpan.setAttribute('class','error');  
+        }
     } else {
-        document.querySelector('form').checkValidity();
-        document.querySelector('form').reportValidity();
-        chatId.setAttribute('class','error-input');
-        botId.setAttribute('class','error-input');
-        messageSpan.textContent = "Please, enter all required fields";   
-        messageSpan.setAttribute('class','error');  
+        messageSpan.textContent = "Only YouTube is supported";
+        messageSpan.setAttribute('class','error')
     }
 });
 
