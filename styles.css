@@ -105,15 +105,15 @@ strong{
 }
 .tube{
     background: red;
-    width: 25px;
+    width: 15px;
     border-radius: 11px;
-    padding: 5px 14px;
+    padding: 7px 14px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 0.2rem;
-    height: 20px;
-    font-size: 0.6em;
+    margin-right: 0.5rem;
+    height: 11px;
+    font-size: 0.9em;
     margin-top: 5px;
 }
 .you{
@@ -125,6 +125,7 @@ strong{
     justify-content: flex-start;
     align-items: center;
     font-size: 23px;
+    margin-left: -0.5em;
 }
 .telegram{
     justify-content: center;
@@ -139,4 +140,9 @@ strong{
 }
 .yt-text{
     font-size: 20px;
+}
+img{
+    width: 32px;
+    margin-left: 0em;
+    padding-right: 0.2em;
 }
