@@ -69,12 +69,11 @@ sendVideo.addEventListener("click", async (e) => {
         }
     };  
     if(window.location.href.split('&')[0].includes('watch')){
-        //document.querySelector('#top-level-buttons-computed ytd-button-renderer').click();
-        //let currentTimestampSpans = document.querySelector('.style-scope.tp-yt-paper-input input');
         let currentTimestampText = document.querySelector('.ytp-time-current').textContent
         console.log(currentTimestampText);
         let currentTimestampArr = currentTimestampText.split(':');
-        let seconds = getSeconds(currentTimestampArr);
+        //let seconds = getSeconds(currentTimestampArr);
+        let seconds = parseInt(document.querySelectorAll('.ytp-progress-bar')[document.querySelectorAll('.ytp-progress-bar').length -1].getAttribute('aria-valuenow'));
         const yt_url  = window.location.search.split('&')[0].slice(3);
         const url = `https://youtu.be/${yt_url}?t=${seconds}`;
         const res = await fetch(`https://api.telegram.org/bot${botId.trim()}/sendMessage?text=${url}&chat_id=${chatId.trim()}`);
