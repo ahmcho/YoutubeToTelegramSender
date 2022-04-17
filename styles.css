@@ -59,7 +59,7 @@ button.current {
 }
 .success{
     background: green;
-    transform: translateY(100%);
+    animation: fadeIn .25s;
 }
 h1{
     width: 100%;
