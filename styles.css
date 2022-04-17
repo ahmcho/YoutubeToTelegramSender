@@ -39,6 +39,7 @@ button.current {
     padding: 8px;
     font-size: 1.1em;
     border-radius: 20px;
+    margin-top: 1em;
 }
 .error{
     background: red;
