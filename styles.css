@@ -38,15 +38,28 @@ button.current {
     text-align: center;
     padding: 8px;
     font-size: 1.1em;
-    border-radius: 20px;
     margin-top: 1em;
+    border-radius: 20px;
+}
+@keyframes fadeIn {
+	from {
+        margin-top: 0;
+		opacity: 0;
+		transform: translate3d(0, -40%, 0);
+	}
+	to {
+        margin-top: 1em;
+		opacity: 1;
+		transform: translate3d(0, 10%, 0);
+	}
 }
 .error{
     background: red;
+    animation: fadeIn .25s;
 }
 .success{
     background: green;
-    
+    transform: translateY(100%);
 }
 h1{
     width: 100%;
