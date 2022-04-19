@@ -42,6 +42,8 @@ sendVideo.addEventListener("click", async (e) => {
 });
 
 async function sendMessage(){
+    document.body.style.height = "570px"
+    document.body.setAttribute('class','animated-body');
     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     let messageSpan = document.querySelector('#outputMessage');
     sendVideo.innerHTML = '<span id="icon">&#9676;</span>';
@@ -57,8 +59,6 @@ async function sendMessage(){
             }, () => {
                 chrome.storage.sync.get('isVideoPlayerPage', ({isVideoPlayerPage}) => {
                     if(!isVideoPlayerPage){
-                        document.body.style.height = "570px"
-                        document.body.setAttribute('class','animated-body');
                         messageSpan.textContent = `Please, navigate to any video`;
                         messageSpan.setAttribute('class', 'error');
                         sendVideo.innerHTML = 'Send';
