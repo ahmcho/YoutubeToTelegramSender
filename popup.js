@@ -57,6 +57,8 @@ async function sendMessage(){
             }, () => {
                 chrome.storage.sync.get('isVideoPlayerPage', ({isVideoPlayerPage}) => {
                     if(!isVideoPlayerPage){
+                        document.body.style.height = "570px"
+                        document.body.setAttribute('class','animated-body');
                         messageSpan.textContent = `Please, navigate to any video`;
                         messageSpan.setAttribute('class', 'error');
                         sendVideo.innerHTML = 'Send';
@@ -70,6 +72,7 @@ async function sendMessage(){
             document.querySelector('form').reportValidity();
             chatId.setAttribute('class','error-input');
             botId.setAttribute('class','error-input');
+            
             messageSpan.textContent = "Please, enter all required fields";   
             messageSpan.setAttribute('class','error');  
         }
