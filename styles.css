@@ -76,12 +76,12 @@ button.current {
 	from {
         margin-top: 0em;
 		opacity: 0;
-		transform: translate3d(0, -40%, 0);
+		transform: translate3d(0, -100%, 0);
 	}
 	to {
-        margin-top: 2em;
+        margin-top: 1em;
 		opacity: 1;
-		transform: translate3d(0, 50%, 0);
+		transform: translate3d(0, 0, 0);
 	}
 }
 @keyframes spin {
@@ -98,7 +98,7 @@ button.current {
 }
 .success{
     background: green;
-    animation: fadeIn .600s;
+    animation: fadeIn .25s;
 }
 h1{
     width: 100%;
