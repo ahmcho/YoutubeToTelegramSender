@@ -1,12 +1,24 @@
+html{
+    height: 579px;
+}
 body{
-    width: 250px;
+    width: 270px;
     background: rgb(0 0 0 / 84%);
     display: flex;
     color: white;
+    height: 579px;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     padding: 1em;
+    padding-top:0px;
+}
+main{
+    display: flex;
+    justify-content: center;
+    margin-top: -0.5em;
+    width: 100%;
+    font-size: 1.6em;
 }
 button {
     background: #0088cc;
@@ -18,6 +30,18 @@ button {
     border-radius: 50px;
     color: #FFFF;
     transition: all 200ms ease-in;
+}
+.animated{
+    display: block;
+    width: 100%;
+    height: 56px;
+    margin-top: -0.4em;
+    font-weight: 800;
+    font-size: 2.5em;
+    animation-name: spin;
+    animation-duration: 600ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 button:hover{
     cursor: pointer;
@@ -38,7 +62,7 @@ button.current {
     text-align: center;
     padding: 8px;
     font-size: 1.1em;
-    margin-top: 1em;
+    margin-top: 1.5em;
     border-radius: 20px;
 }
 @keyframes fadeIn {
@@ -48,10 +72,18 @@ button.current {
 		transform: translate3d(0, -40%, 0);
 	}
 	to {
-        margin-top: 1em;
+        margin-top: 1.5em;
 		opacity: 1;
 		transform: translate3d(0, 10%, 0);
 	}
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
 }
 .error{
     background: red;
@@ -59,7 +91,7 @@ button.current {
 }
 .success{
     background: green;
-    animation: fadeIn .25s;
+    animation: fadeIn .600s;
 }
 h1{
     width: 100%;
@@ -72,10 +104,11 @@ hr{
     width: 100%;
     margin-bottom: 0.5em;
 }
-input{
+input[type="text"]{
     text-align: center;
     border-radius: 30px;
     height: 20px;
+    font-family: monospace;
     padding: 5px;
     margin: 1em;
     padding-right: 10px;
@@ -145,6 +178,7 @@ strong{
     justify-content: center;
     align-items: center;
     display: flex;
+    font-weight: 600;
 }
 .arrow{
     display: flex;
@@ -159,4 +193,13 @@ img{
     width: 32px;
     margin-left: 0em;
     padding-right: 0.2em;
+}
+.autosend-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+#autosend{
+    margin-right: 1em;
 }
