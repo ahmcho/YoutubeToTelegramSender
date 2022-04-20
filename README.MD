@@ -1,3 +1,5 @@
+![OCR_example](./extension_window.png)
+
 A Chrome extension to send any Youtube video with the current timestamp to any Telegram channel that you have ownership on.
 
 * [Installation](#installation)
