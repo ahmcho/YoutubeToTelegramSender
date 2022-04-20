@@ -1,4 +1,4 @@
-<div style="display:flex;justify-content:center;margin-bottom:1em;">
+<div align="center">
     <img src="extension_window.png">
 </div>
 
