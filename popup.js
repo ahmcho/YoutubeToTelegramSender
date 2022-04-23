@@ -84,7 +84,12 @@ async function sendMessage(){
 }
 async function execute([chatId, botId]) { 
     if(window.location.href.split('&')[0].includes('watch')){
-        let seconds = parseInt(document.querySelectorAll('.ytp-progress-bar')[document.querySelectorAll('.ytp-progress-bar').length -1].getAttribute('aria-valuenow'));
+        let seconds;
+        let progressBars = [...document.querySelectorAll('.ytp-progress-bar')];
+
+        progressBars.map((item)=>{
+            if(item.getAttribute('aria-valuenow') != 0) seconds = item.getAttribute('aria-valuenow')
+        });
         const yt_url  = window.location.search.split('&')[0].slice(3);
         const url = `https://youtu.be/${yt_url}?t=${seconds}`;
         const res = await fetch(`https://api.telegram.org/bot${botId.trim()}/sendMessage?text=${url}&chat_id=${chatId.trim()}`);
@@ -95,15 +100,3 @@ async function execute([chatId, botId]) {
         chrome.storage.sync.set({isVideoPlayerPage: false})
     }
 }
-
-const getSeconds = (timestampArray) => {
-    if(timestampArray.length == 1){
-        return parseInt(timestampArray[0]);
-    }
-    if(timestampArray.length == 2){
-        return parseInt(timestampArray[0])*60 + parseInt(timestampArray[1]);
-    }
-    if(timestampArray.length == 3){
-        return parseInt(timestampArray[0])*3600 + parseInt(timestampArray[1])*60 + parseInt(timestampArray[2]);
-    }
-};
