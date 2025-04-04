@@ -1,24 +1,16 @@
 <!DOCTYPE html>
-<html><head>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body style="height: 500px;">
-  <main><div class="youtube"><span class="tube">▶</span><span class="yt-text">YouTube</span></div><div class="arrow">→</div><div class="telegram"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg"/>Telegram</div></main>
-  <hr>
-  <h2 class="center">Send the video you watching with the current timestamp to any Telegram chat that you want. </h2>
-  <hr>
-  <p class="center">Enter your <strong>bot token</strong> and <strong>chat ID</strong> before pressing send. Your bot must be an admin on that channel</p>
-  <form>
-    <input type="text" name="botId" id="botId" placeholder="Enter bot token" required="">
-    <input type="text" name="chatId" id="chatId" placeholder="Enter chat ID" required="">
-    <div class="autosend-container" title="If enabled, will send the link automatically as you click on the extension button">
-      <input type="checkbox" name="autosend" id="autosend">
-      <label for="autosend"> Autosend on opening?</label><br>
-    </div>
-    <button id="sendVideo">Send</button>
-    <span id="outputMessage"></span>
-  </form>
-  
-  <script src="popup.js"></script>
+<html lang="en">
 
-</body></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup</title>
+    <script type="module" src="/src/Popup.jsx"></script>
+    <link href="/src/styles.css" rel="stylesheet">
+</head>
+
+<body class="bg-slate-900">
+    <div id="react-target"></div>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  width: 400px;
+  /* height: 600px; */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+details[open] summary ~ * {
+  animation: sweep 0.6s ease-in-out;
+}
+details {
+  height: 60px;
+  transition: all 600ms ease-in-out;
+}
+details span,
+details svg {
+  transition: all 600ms ease-in-out;
+}
+
+details[open] {
+  height: 23vh;
+}
+
+details[open] span {
+  transform: translateX(0.5rem);
+}
+
+@keyframes sweep {
+  0% {
+    opacity: 0;
+    height: 0;
+    margin-left: -10px;
+  }
+  100% {
+    opacity: 1;
+    height: 180px;
+    margin-left: 0px;
+  }
+}
+@keyframes close {
+  0% {
+    opacity: 1;
+    margin-left: 0px;
+  }
+  100% {
+    opacity: 0;
+    margin-left: -10px;
+  }
+}
+details.closing summary ~ * {
+  animation: close 0.5s;
+}
